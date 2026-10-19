@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>California house price predictor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>What is a California home worth?</h1>
+    <p>Click the map to drop a pin, describe the neighborhood, and the model estimates the median home value there.</p>
+  </header>
+  <main>
+    <svg id="map" viewBox="0 0 520 560" tabindex="0"
+         aria-label="Map of California. Click, or use the arrow keys, to move the pin.">
+      <text class="ocean" x="18" y="290">Pacific Ocean</text>
+      <path id="state"></path>
+      <g id="cities"></g>
+      <g id="pin"><circle class="halo" r="15"></circle><circle class="dot" r="6"></circle></g>
+    </svg>
+    <section>
+      <div class="result" aria-live="polite">
+        <p>Estimated median home value</p>
+        <p id="price" class="price">…</p>
+        <p id="margin" class="muted"></p>
+      </div>
+      <div id="controls"></div>
+      <p class="muted">Trained on 1990 census data, so prices reflect that era. Values in the dataset stop at $500,000.</p>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
